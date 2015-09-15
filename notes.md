@@ -4,7 +4,7 @@
 ## Imports
 
 ## DermaTestPlugin.scala
-,,,
+```
 package derma
 
 /**
@@ -21,12 +21,12 @@ class DermaTestPlugin extends PlugIn {
   }
 
 }
-,,,
+```
 
 
 ## build.SBT
-'''
- 
+
+``` 
 name := "util"
 
 version := "1.0"
@@ -47,24 +47,22 @@ lazy val util = (project in file(".")).
     // Instruct `clean` to delete created plugins subdirectory created by `ijRun`/`ijPrepareRun`.
     cleanFiles += ijPluginsDir.value
   )
-    
-'''
+```
 ## plugins.sbt
-'''
+```
 
 logLevel := Level.Warn
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
 addSbtPlugin("net.sf.ij-plugins" % "sbt-imagej" % "2.0.0") 
-
-'''
+```
 ## plugins.config in Resources
-'''
+```
 
 Plugins>Derma>Generic, "Derma Test", derma.DermaTestPlugin
 
-'''
+```
 ## Steps in IDEA
 - Start IDEA
 - Select "Import Project" and load the example/build.sbt. This will let you edit and build the project.
